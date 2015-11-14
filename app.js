@@ -9,6 +9,7 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.set('port', process.env.PORT || 8080);
 
 app.get('/setUpText', function(req, res){
 
@@ -46,13 +47,13 @@ app.get('/', function (req, res) {
   res.send('hi');
 });
 
- 
+
 app.get('*', function(req, res){
   res.sendStatus(404);
 });
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(app.get('port'), function () {
   var host = server.address().address;
   var port = server.address().port;
 
