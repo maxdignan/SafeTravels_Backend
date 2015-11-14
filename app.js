@@ -47,7 +47,9 @@ app.get('/', function (req, res) {
 });
 
 
-
+app.get('*', function(req, res){
+  res.sendStatus(404);
+});
 
 
 var server = app.listen(3000, function () {
