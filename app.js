@@ -48,8 +48,8 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('*', function(req, res){
-  res.sendStatus(404);
+app.use(function(req, res, next) {
+  res.sendStatus(404).send('Sorry cant find that!');
 });
 
 
