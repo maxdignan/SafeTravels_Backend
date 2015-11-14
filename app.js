@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
 
 
 app.use(function(req, res, next) {
-  res.sendStatus(404).send('Sorry cant find that!');
+  res.sendStatus(404);
 });
 
 
