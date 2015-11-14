@@ -48,9 +48,6 @@ app.get('/', function (req, res) {
 });
 
 
-app.use(function(req, res, next) {
-  res.sendStatus(404);
-});
 
 
 var server = app.listen(app.get('port'), function () {
