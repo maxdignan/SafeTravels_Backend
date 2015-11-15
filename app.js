@@ -16,8 +16,12 @@ app.get('/setUpText', function(req, res){
   //parse data
   var data = req.query.numbers;
   var mess = req.query.message;
-  data = JSON.parse(data);
-  mess = JSON.parse(mess);
+  data = data.split(',');
+  mess = mess.split('_');
+  mess = mess.join(' ');
+
+  console.log(data);
+  console.log(mess);
 
   //sendMessages
   setUpTexts(data, mess);
@@ -28,12 +32,15 @@ app.get('/setUpText', function(req, res){
 
 app.get('/futureText', function(req, res){
     //parse data
+    //parse data
     var data = req.query.numbers;
     var mess = req.query.message;
-    var minutes = parseInt(req.query.minutes);
-    data = JSON.parse(data);
-    mess = JSON.parse(mess);
+    data = data.split(',');
+    mess = mess.split('_');
+    mess = mess.join(' ');
 
+    console.log(data);
+    console.log(mess);
     //sendMessages
     futureMessages.future(data, mess, minutes, res);
 });
