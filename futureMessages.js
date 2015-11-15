@@ -15,7 +15,7 @@ module.exports = {
     } while(id === undefined);
 
     idToTimerMap[id] = timeout;
-    res.send(id);
+    res.set("dataid", id);
   },
 
   cancel: function (id, res){
