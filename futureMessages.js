@@ -16,7 +16,6 @@ module.exports = {
 
     idToTimerMap[id] = timeout;
     res.set('x-data-id', id);
-    res.end();
   },
 
   cancel: function (id, res){
