@@ -42,7 +42,7 @@ app.get('/futureText', function(req, res){
     console.log(data);
     console.log(mess);
     //sendMessages
-    futureMessages.future(data, mess, minutes, res);
+    futureMessages.future(data, mess, req.query.minutes, res);
 });
 
 app.get('/cancelText', function(req, res){
